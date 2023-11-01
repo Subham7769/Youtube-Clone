@@ -36,6 +36,9 @@ input[type="search"]{
     width: 80px;
     height: 80px;
 }
+.card-subtitle span{
+  color: #000;
+}
 .translate-top{
     transform: translateX(-10%) translateY(-120%);
 }
@@ -59,3 +62,4 @@ span,p{
     width: 80px;
     height: 80px;
 }
+
