@@ -1,4 +1,4 @@
-const API_KEY = 'AIzaSyAkZxDRVAQs12xNHqzVQEzwz9pSlvzhSwg';
+const API_KEY = 'AIzaSyCQ-9ZJhX8dojG7DHFBGYSqhyN9c0NE9w0';
 
 const BASE_URL = "https://www.googleapis.com/youtube/v3";
 let searchBtn = document.getElementById("searchBtn");
@@ -10,6 +10,7 @@ searchBtn.addEventListener("click",async (e)=>{
     e.preventDefault();
     console.log("Search Started");
     let dataItems = await fetchVideo(searchQuery.value,maxResults);
+    // console.log(dataItems);
     console.log("Rendering video...");
     renderVideo(dataItems);
     searchQuery.innerText = '';
@@ -34,15 +35,13 @@ async function fetchVideo(searchQuery,maxResults){
                 console.log("this is the error in fetching VideoStats/ChannelLogo Data in API call-> -> "+error);
             }
         });
-        console.log(dataItems);
+        // console.log(dataItems);
         console.log("Fetching video Successful!");
         return dataItems; 
     } catch (error) {
         console.log("this is the error in fetching the Data in API call-> "+error);
     }
 }
-
-fetchVideo('icc',maxResults)
 // snippet gives video information as well
 // like title,thumbnail & other information
 
@@ -56,14 +55,14 @@ async function getVideoStats(videoId) {
 async function getContentDetails(videoId) {
     const response = await fetch(`${BASE_URL}/videos?id=${videoId}&part=contentDetails&key=${API_KEY}`);
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     return data;
 }
 
 async function getChannelLogo(channelId) {
     const response = await fetch(`${BASE_URL}/channels?key=${API_KEY}&part=snippet&id=${channelId}`);
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     return data;
 }
 
@@ -71,13 +70,16 @@ function renderVideo(dataItems){
     console.log("Rendering video starting...");
     videoContainer.innerHTML='';
     for (let i = 0; i < dataItems.length; i++) {
+        console.log(dataItems[i]);
+        const {ChannelLogo } =dataItems[i];
+        console.log(ChannelLogo);
+
             let videoThumbnailSrc = dataItems[i].snippet.thumbnails.default.url;
-            let channelThumbnailSrc = dataItems[i].ChannelLogo.items.snippet.thumbnails.default.url;//problem
+            let channelThumbnailSrc = dataItems[i].ChannelLogo;//problem
             let channelName = dataItems[i].snippet.channelTitle;
             let videoTitle = dataItems[i].snippet.thumbnails.title;
-            let videoViews = dataItems[i].VideoStats.items.statistics.viewCount;//problem
+            let videoViews = dataItems[i].VideoStats.items[0].statistics.viewCount;//problem
             let videoUploaded = dataItems[i].snippet.publishTime;
-    
     
             let cardDiv = document.createElement("div"); 
             cardDiv.className="card";
