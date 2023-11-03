@@ -2,7 +2,7 @@ let urlParams = new URLSearchParams(window.location.search);
 let SearchVideoId = urlParams.get("q") ? urlParams.get("q") : "";
 let searchKey = urlParams.get("searchKey") ? urlParams.get("searchKey") : "";
 
-const API_KEY = "AIzaSyBmOfUnRNYc22e04ZmK79uRbPb6388K9AE";
+const API_KEY = "AIzaSyDiC0pGwJsoa-3pqafFpsAo61ZvbicbMOI";
 const BASE_URL = "https://www.googleapis.com/youtube/v3";
 let maxResults = 5;
 

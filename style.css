@@ -68,12 +68,10 @@ input[type="search"]{
 height: 10rem;
 width: 100%;
 color: white;
+box-sizing: border-box;
 }
 .translate-left{
     transform: translateX(-130%) translateY(-10%);
-}
-#videoContainer{
-    height: 30rem;
 }
 
 #channelThumbnail{
@@ -81,3 +79,33 @@ color: white;
     height: 80px;
 }
 
+
+@media screen and (max-width: 992px){
+  #sideMenu{
+    display: none!important;
+  }
+
+#suggestedSection{
+  flex-direction: row!important;
+  flex-wrap: wrap!important;
+}
+#videoMain{
+  background-color: rgb(34, 34, 34)!important;
+  height: auto!important;
+}
+#videoPreviewSection{
+  height: auto!important;
+}
+.card1{
+  width: 100%!important;
+    height: auto;
+    box-sizing: border-box!important;
+}
+#cardDetails{
+  justify-content: space-around!important;
+  margin: 5rem 2rem!important;
+}
+input[type="search"]{
+  width: 100% !important;
+}
+}

@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyBmOfUnRNYc22e04ZmK79uRbPb6388K9AE";
+const API_KEY = "AIzaSyDiC0pGwJsoa-3pqafFpsAo61ZvbicbMOI";
 
 const BASE_URL = "https://www.googleapis.com/youtube/v3";
 let searchBtn = document.getElementById("searchBtn");
@@ -54,6 +54,7 @@ async function fetchVideo(searchQuery, maxResults) {
     }
     // console.log(dataItems);
     console.log("Fetching video Successful!");
+    localStorage.setItem("dataItems",JSON.stringify(dataItems));
     return dataItems;
   } catch (error) {
     console.log(
@@ -217,7 +218,6 @@ function durationConverter(duration) {
 function videoPreview(videoId) {
     let link = document.createElement('a');
     link.href = `video.html?q=${videoId}&searchKey=${searchQuery.value}`;
-    alert(searchQuery.value);
     link.click();
 }
 

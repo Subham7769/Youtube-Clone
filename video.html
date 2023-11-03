@@ -10,7 +10,7 @@
 </head>
 <body>
   <!-- loader spinner -->
-  <div class="custom-loader" id="custom-loader"></div
+  <div class="custom-loader" id="custom-loader"></div>
     <!-- nav bar -->
     <header>
         <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
@@ -49,45 +49,51 @@
             </div>
           </nav>
     </header>
-    <main class="container-fluid row d-flex flex-row justify-content-center gap-2 bg-dark h-100 py-2 px-6 h-100 text-white">
+    <main class="container-fluid row d-flex flex-row justify-content-center gap-2 bg-dark h-100 py-2 px-6 h-100 text-white" id="videoMain">
+
         <!-- video & channel details -->
-        <div class="col-7 overflow-y-scroll h-100 d-flex flex-column gap-2 p-2 ">
-            <div class="container" id="videoContainer">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/y1j2FL9d31w?si=7-h7yvZM_3h-oevw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <div id="video_channelDetails">
+        <div class="col-lg-7 overflow-y-scroll h-100 d-flex flex-column gap-2 p-2 align-items-center" id="videoPreviewSection">
+          <div class="container" id="videoContainer">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/y1j2FL9d31w?si=7-h7yvZM_3h-oevw"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <div class="container" id="video_channelDetails">
             <h4 class="mx-2 p-2 my-1" id="videoTitle">Blind Woodturner: Turning passion into fine art</h4>
             <div class="d-flex justify-content-between mx-2 my-1 p-2">
-                <span class="d-flex gap-3 justify-content-center align-items-center"><span id="viewsCount">576,969 views</span> . <span id="videoDate">Oct 8, 2023</span></span>
-                <span class="d-flex gap-3 justify-content-center align-items-center">
-                    <span id="likes"><img src="./Assets/liked.png" alt="">1.7K</span>
-                    <span id="dislikes"><img src="./Assets/DisLiked.png" alt="">632</span>
-                    <span id="share"><img src="./Assets/share.png" alt="">SHARE</span>
-                    <span id="save"><img src="./Assets/save.png" alt="">SAVE</span>
-                    <span id="more"><img src="./Assets/More.png" alt=""></span>
-                </span>
+              <span class="d-flex gap-3 justify-content-center align-items-center"><span id="viewsCount">576,969 views</span> .
+                <span id="videoDate">Oct 8, 2023</span></span>
+              <span class="d-flex gap-3 justify-content-center align-items-center">
+                <span id="likes"><img src="./Assets/liked.png" alt="">1.7K</span>
+                <span id="dislikes"><img src="./Assets/DisLiked.png" alt="">632</span>
+                <span id="share"><img src="./Assets/share.png" alt="">SHARE</span>
+                <span id="save"><img src="./Assets/save.png" alt="">SAVE</span>
+                <span id="more"><img src="./Assets/More.png" alt=""></span>
+              </span>
             </div>
             <hr class="border border-secondary border-2">
             <div class="row p-2">
-                <div class="col-2">
-                    <img src="./Assets/Screenshot (20).png" alt="channelThumbnail" class="rounded-circle " id="channelThumbnail">
+              <div class="col-2">
+                <img src="./Assets/Screenshot (20).png" alt="channelThumbnail" class="rounded-circle " id="channelThumbnail">
+              </div>
+              <div class="col-10">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h4 id="channelName">Code with Herry</h4>
+                    <p id="channelStats"><span>1.2 M subscriber</span></p>
+                  </div>
+                  <button class="btn btn-danger px-5">Subscribe</button>
                 </div>
-                <div class="col-10">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <h4 id="channelName">Code with Herry</h4>
-                            <p id="channelStats"><span>1.2 M subscriber</span></p>
-                        </div>
-                        <button class="btn btn-danger px-5">Subscribe</button>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi beatae sunt quam esse autem officiis illum cumque incidunt accusamus! Possimus ipsum ad quod facere, laboriosam optio iste hic animi nihil?</p>
-                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi beatae sunt quam esse autem officiis illum
+                  cumque incidunt accusamus! Possimus ipsum ad quod facere, laboriosam optio iste hic animi nihil?</p>
+              </div>
             </div>
           </div>
         </div>
         
         <!-- suggested video section -->
-        <div class="col-4 overflow-y-scroll h-100 d-flex flex-column gap-2 p-2 align-items-center" id="suggestedSection">
+        <div class="col-lg-4 overflow-y-scroll h-100 d-flex flex-column gap-2 p-2 align-items-center" id="suggestedSection">
             
             <div class="card1 d-flex row" >
 
@@ -95,7 +101,7 @@
 
                 <div class="card-body d-flex justify-content-center align-items-center position-relative col-7" >  
                     <span class="position-absolute bottom-0 start-0 translate-left bagde text-bg-dark rounded-pill p-2 py-1" id="videoDuration">02:12</span>                    
-                    <div class="d-flex flex-column justify-content-between  h-100 p-2">
+                    <div class="d-flex flex-column justify-content-between  h-100 p-2" id="cardDetails">
                         <h5 class="card-title" id="channelTitle">Lorem ipsum dolor sit, amet consec tem!</h5>
                         <p class="card-subtitle" id="channelName">Lorem ipsum .</p>
                         <p class="card-subtitle"><span>15K views</span> . <span>1 week ago</span></p>
