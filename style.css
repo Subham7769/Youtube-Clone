@@ -5,6 +5,7 @@
   border: 1px solid blue !important;
 }
 body{
+  position: relative;
     height: 100vh!important;
     width: 100vw;
 }
@@ -36,12 +37,31 @@ input[type="search"]{
     width: 80px;
     height: 80px;
 }
-.card-subtitle span{
-  color: #000;
+.card-title {
+  line-height: 1.5em!important;
+  height: 3em;       /* height is 2x line-height, so two lines will display */
+  overflow: hidden;  /* prevents extra lines from being visible */
 }
+
 .translate-top{
     transform: translateX(-10%) translateY(-120%);
 }
+
+.custom-loader {
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  border:8px solid;
+  border-color:#f31111 #0000;
+  animation:s1 1s infinite;
+}
+@keyframes s1 {to{transform: rotate(.5turn)}}
+
+
 
 /* video page */
 .card1{
@@ -55,9 +75,7 @@ color: white;
 #videoContainer{
     height: 30rem;
 }
-span,p{
-    color: white;
-}
+
 #channelThumbnail{
     width: 80px;
     height: 80px;
