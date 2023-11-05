@@ -1,0 +1,35 @@
+.channelThumbnail {
+    width: 80px;
+    height: 80px;
+  }
+    .navbar-nav li a {
+      color: white !important;
+    }
+    input[type="search"] {
+      width: 22vw !important;
+    }
+    .container p,
+    h4 {
+      color: white;
+    }
+    .overflow-x-scroll::-webkit-scrollbar,
+    .overflow-y-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .bg_black {
+      background-color: #000;
+    }
+    .card {
+      width: 20rem;
+      height: 22rem;
+    }
+    
+    .card-title {
+      line-height: 1.5em !important;
+      height: 3em; /* height is 2x line-height, so two lines will display */
+      overflow: hidden; /* prevents extra lines from being visible */
+    }
+    
+    .translate-top {
+      transform: translateX(-10%) translateY(-120%);
+    }

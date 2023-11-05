@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyDiC0pGwJsoa-3pqafFpsAo61ZvbicbMOI";
+const API_KEY = "AIzaSyDA0UFC-gFpphL3RRiZy26LV_h4DMI_O1g";
 
 const BASE_URL = "https://www.googleapis.com/youtube/v3";
 let searchBtn = document.getElementById("searchBtn");
@@ -54,7 +54,6 @@ async function fetchVideo(searchQuery, maxResults) {
     }
     // console.log(dataItems);
     console.log("Fetching video Successful!");
-    localStorage.setItem("dataItems",JSON.stringify(dataItems));
     return dataItems;
   } catch (error) {
     console.log(
