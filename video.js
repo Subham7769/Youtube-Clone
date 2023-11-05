@@ -4,7 +4,7 @@ let searchKey = urlParams.get("searchKey") ? urlParams.get("searchKey") : "";
 
 const API_KEY = "AIzaSyDA0UFC-gFpphL3RRiZy26LV_h4DMI_O1g";
 const BASE_URL = "https://www.googleapis.com/youtube/v3";
-let maxResults = 5;
+let maxResults = 20;
 
 let searchBtn = document.getElementById("searchBtn");
 let searchQuery = document.getElementById("Search");

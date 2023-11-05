@@ -5,7 +5,7 @@ let searchBtn = document.getElementById("searchBtn");
 let searchQuery = document.getElementById("Search");
 let videoContainer = document.getElementById("videoContainer");
 let customLoader = document.getElementById("custom-loader");
-let maxResults = 5;
+let maxResults = 20;
 
 async function initialRender() {
   console.log("Search Started");
