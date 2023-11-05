@@ -1,35 +1,115 @@
+.navbar-nav li a {
+    color: white !important;
+}
+
+input[type="search"] {
+    width: 22vw !important;
+}
+
+body {
+    height: 100vh !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+main {
+    flex: 1;
+    background-color: #343a40;
+    overflow-y: auto;
+    display: flex;
+}
+
+#sideMenu {
+    flex: 0.15;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 0px 1rem;
+}
+
+#sideMenu::-webkit-scrollbar,
+#upperFilter::-webkit-scrollbar,
+#videoContainer::-webkit-scrollbar {
+    display: none;
+}
+
+#videoSection {
+    flex: 0.85;
+    display: flex;
+    flex-direction: column;
+}
+
+#upperFilter {
+    display: flex;
+    overflow-x: scroll;
+    padding: 0.5rem 0.5rem;
+}
+
+#upperFilter>button {
+    margin-right: 0.8rem;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 2rem;
+    outline: none;
+    padding: 0.3rem 0.5rem;
+}
+
+#upperFilter>button:hover {
+    background-color: white;
+    color: #000;
+}
+
+#videoContainer {
+    border: 2px solid rgb(246, 255, 0);
+    flex: 1;
+    display: flex;
+    background-color: #000;
+    overflow-y: auto;
+    padding: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+}
+
+.card {
+    width: 19rem;
+    height: 20rem;
+}
+.cardBody{
+    position: relative;
+    padding: 0.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.channelImage{
+    flex: 0.2;
+}
+.videoDetails{
+    flex: 0.8;
+}
 .channelThumbnail {
-    width: 80px;
-    height: 80px;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+.card-title {
+    line-height: 1.2em !important;
+    height: 2.5em;
+    overflow: hidden;
+}
+
+#videoDuration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(-10%) translateY(-120%);
+    color: white;
+    background-color: rgb(39, 39, 39);
+    border-radius: 0.5rem;
+    padding: 0.1rem 0.5rem;
+    font-size: 1rem;
   }
-    .navbar-nav li a {
-      color: white !important;
-    }
-    input[type="search"] {
-      width: 22vw !important;
-    }
-    .container p,
-    h4 {
-      color: white;
-    }
-    .overflow-x-scroll::-webkit-scrollbar,
-    .overflow-y-scroll::-webkit-scrollbar {
-      display: none;
-    }
-    .bg_black {
-      background-color: #000;
-    }
-    .card {
-      width: 20rem;
-      height: 22rem;
-    }
-    
-    .card-title {
-      line-height: 1.5em !important;
-      height: 3em; /* height is 2x line-height, so two lines will display */
-      overflow: hidden; /* prevents extra lines from being visible */
-    }
-    
-    .translate-top {
-      transform: translateX(-10%) translateY(-120%);
-    }

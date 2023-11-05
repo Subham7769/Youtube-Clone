@@ -56,9 +56,9 @@
 #videoContainer {
   min-height: 30vw;
 }
-#video_channelDetails {
-}
+
 #videoTitle {
+  margin: 1.5rem 0rem;
 }
 #videoDetails {
   display: flex;
@@ -79,8 +79,7 @@
   flex: 0.2;
 }
 #channelThumbnail {
-  width: 1rem;
-  height: 1rem;
+  width: 5rem;
   border-radius: 50%;
 }
 #channelDetailsContainer {

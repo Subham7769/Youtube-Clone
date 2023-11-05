@@ -37,6 +37,8 @@ async function fetchVideo(searchQuery, maxResults) {
     );
     const data = await response.json();
     const dataItems = data.items;
+    // const dataItems = JSON.parse(localStorage.getItem('dataItems'));
+
     for (let i = 0; i < dataItems.length; i++) {
       try {
         let VideoStats = await getVideoStats(dataItems[i].id.videoId);
@@ -52,7 +54,7 @@ async function fetchVideo(searchQuery, maxResults) {
         );
       }
     }
-    // console.log(dataItems);
+    console.log(dataItems);
     console.log("Fetching video Successful!");
     return dataItems;
   } catch (error) {
@@ -98,42 +100,42 @@ function renderVideo(dataItems) {
   videoContainer.innerHTML = "";
   for (let i = 0; i < dataItems.length; i++) {
     try {
-        let videoId = dataItems[i].id.videoId;
-        let videoThumbnailSrc = dataItems[i].snippet.thumbnails.default.url;
-        let channelThumbnailSrc = dataItems[i].ChannelLogo.items[0].snippet.thumbnails.default.url;
-        let channelName = dataItems[i].snippet.channelTitle;
-        let videoTitle = dataItems[i].snippet.title;
-        let videoViews = dataItems[i].VideoStats.items[0].statistics.viewCount;
-        let videoUploaded = dataItems[i].snippet.publishTime;
-        let duration = dataItems[i].contentDetails.items[0].contentDetails.duration;
-    
-        let cardDiv = document.createElement("div");
-        cardDiv.className = "card";
-        cardDiv.innerHTML = `
-                <img src="${videoThumbnailSrc}" alt="videoThumbnail" class="card-img-top">
-        
-                <div class="card-body d-flex justify-content-center align-items-center position-relative" >
-                    
-                    <span class="position-absolute top-0 end-0 translate-top bagde text-bg-dark rounded-pill p-2 py-1" id="videoDuration">${durationConverter(duration)}</span>
-                    <img src="${channelThumbnailSrc}" alt="channelThumbnail" class="rounded-circle px-3 channelThumbnail">
-                    
-                    <div class="d-flex flex-column">
-                        <h5 class="card-title" id="videoTitle" >${videoTitle}</h5>
-                        <p class="card-subtitle" id="channelName" </p>
-                        <p class="card-subtitle" id="channelStats">
-                        <span>${videoViewsFormator(videoViews)} views</span>
-                         . <span>${timeAgo(videoUploaded)}</span></p>
-                    </div>
-        
-                </div>
-                `;
-                cardDiv.addEventListener("click", ()=>{
-                    videoPreview(videoId);
-                });
-        videoContainer.appendChild(cardDiv);
-        
+      let videoId = dataItems[i].id.videoId;
+      let videoThumbnailSrc = dataItems[i].snippet.thumbnails.default.url;
+      let channelThumbnailSrc =
+        dataItems[i].ChannelLogo.items[0].snippet.thumbnails.default.url;
+      let channelName = dataItems[i].snippet.channelTitle;
+      let videoTitle = dataItems[i].snippet.title;
+      let videoViews = dataItems[i].VideoStats.items[0].statistics.viewCount;
+      let videoUploaded = dataItems[i].snippet.publishTime;
+      let duration =
+        dataItems[i].contentDetails.items[0].contentDetails.duration;
+
+      let cardDiv = document.createElement("div");
+      cardDiv.className = "card";
+      cardDiv.innerHTML = `
+        <img src="${videoThumbnailSrc}" al/t="videoThumbnail" class="card-img-top">
+        <div class="cardBody" >
+        <span class="" id="videoDuration">${durationConverter(
+          duration
+        )}</span>
+          <div class="channelImage">
+            <img src="${channelThumbnailSrc}" alt="channelThumbnail" class="channelThumbnail">
+          </div>
+          <div class="videoDetails">
+            <h5 class="card-title" id="channelTitle" >${videoTitle}</h5>
+            <p class="card-subtitle text-dark" >
+            <span>${videoViewsFormator(videoViews)} views</span>
+             . <span>${timeAgo(videoUploaded)}</span></p>
+          </div>
+        </div>`;
+
+      cardDiv.addEventListener("click", () => {
+        videoPreview(videoId);
+      });
+      videoContainer.appendChild(cardDiv);
     } catch (error) {
-        console.log(error);
+      console.log(error);
     }
   }
   console.log("Rendering Video Done Successfully");

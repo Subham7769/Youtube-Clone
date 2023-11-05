@@ -28,7 +28,7 @@ function videoPlayer(){
      width: "100%",
      videoId : SearchVideoId,
      playerVars: {
-       'autoplay': 0,
+       'autoplay': 1,
        'controls': 1,        
        'modestbranding': 1,
        'showinfo': 1,
@@ -89,8 +89,8 @@ async function renderVideo(dataItems) {
         <h4 id="videoTitle">${videoTitle}</h4>
         <div id="videoDetails">
             <span id="videoStats1">
-            <span id="viewsCount">${countFormator(videoViews)} views</span>
-             . <span id="videoDate">${timeAgo(videoUploaded)}</span></span>
+            <span id="viewsCount"> ${countFormator(videoViews)} views</span>
+             . <span id="videoDate"> ${timeAgo(videoUploaded)}</span></span>
             <span id="videoStats2">
                 <span id="likes"><img src="./Assets/liked.png" alt="">${countFormator(
                   likeCount
@@ -98,8 +98,8 @@ async function renderVideo(dataItems) {
                 <span id="dislikes"><img src="./Assets/DisLiked.png" alt="">${countFormator(
                   dislikeCount
                 )}</span>
-                <span id="share"><img src="./Assets/share.png" alt="">SHARE</span>
-                <span id="save"><img src="./Assets/save.png" alt="">SAVE</span>
+                <span id="share"><img src="./Assets/share.png" alt=""> SHARE</span>
+                <span id="save"><img src="./Assets/save.png" alt=""> SAVE</span>
                 <span id="more"><img src="./Assets/More.png" alt=""></span>
             </span>
         </div>
