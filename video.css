@@ -1,0 +1,405 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body {
+  height: 100vh !important;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.custom-loader {
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: #f31111 #0000;
+  animation: s1 1s infinite;
+}
+@keyframes s1 {
+  to {
+    transform: rotate(0.5turn);
+  }
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  background-color: #000;
+  padding: 1rem;
+  color: white;
+}
+.nav-left,.nav-center,.nav-right{
+display: flex;
+align-items: center;
+}
+.nav-left a,a{
+text-decoration: none;
+}
+.nav-form{
+  display: flex;
+  gap: 0.5rem;
+}
+.nav-form input[type="search"]{
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  outline: none;
+  color: white;
+
+}
+.nav-form button{
+  background-color: gray;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.navbar-list{
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.nav-left a{
+  text-decoration: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.toogler-icon-menu{
+  display: none;
+  width: 24px;
+  height: 24px;
+}
+
+input[type="search"] {
+  width: 22vw;
+}
+
+main {
+  border: 1px solid yellow;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  gap: 1rem;
+  background-color: #000;
+  padding: 1rem;
+  color: white;
+}
+#videoPreviewSection {
+  flex: 0.6;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+#videoPreviewSection::-webkit-scrollbar,
+#suggestedSection::-webkit-scrollbar {
+  display: none;
+}
+#suggestedSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 0.4;
+  overflow-y: auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+#videoContainer {
+  min-height: 30vw;
+  border-radius:1rem ;
+  overflow: hidden;
+}
+
+#videoTitle {
+  margin: 1.5rem 0rem;
+}
+#videoDetails {
+  display: flex;
+  justify-content: space-between;
+}
+#videoStats1,
+#videoStats2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#channelDetails {
+  display: flex;
+  padding: 1rem;
+}
+#channelThumbnailContainer {
+  flex: 0.2;
+
+}
+#channelThumbnail {
+  width: 5rem;
+  border-radius: 50%;
+}
+#channelDetailsContainer {
+  flex: 0.8;
+}
+#channelDetailsContainer p{
+  margin-top: 0.5rem;
+}
+#channelIntro {
+  display: flex;
+  justify-content: space-between;
+}
+#channelName,#channelStats{
+  margin-bottom: 0.5rem;
+}
+.Subscribe {
+  background-color: #f74e4e;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  padding: 0rem 2rem;
+  color: white;
+  font-size: 1.2rem;
+}
+#commentDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.userThumbnail {
+  width: 3rem;
+  border-radius: 50%;
+}
+.addComment {
+  display: flex;
+  gap: 1rem;
+}
+.userImage {
+  flex: 0.1;
+}
+.InputComment {
+  flex: 0.9;
+}
+.InputComment p {
+  margin-bottom: 0.2rem;
+}
+.addCommentInput {
+  background-color: #000;
+  border: none;
+  outline: none;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+}
+#Comments {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.commentTime {
+  font-size: 0.7rem;
+  color: gray;
+}
+.commentStats {
+  display: flex;
+  gap: 01rem;
+  margin-top: 1.5rem;
+}
+.commentStats span > img {
+  width: 1.3rem;
+}
+
+/* suggested video section */
+.card1 {
+  display: flex;
+  height: 10rem;
+  width: 100%;
+  color: white;
+  box-sizing: border-box;
+}
+#videoThumbnail {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  border: 1px solid grey;
+  flex: 0.4;
+}
+#videoDetailsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex: 0.6;
+}
+#videoDuration {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-110%) translateY(-10%);
+  color: white;
+  background-color: rgb(61, 61, 61);
+  border-radius: 0.5rem;
+  padding: 0.1rem 0.2rem;
+  font-size: 0.7rem;
+}
+#cardDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0.5rem;
+}
+
+
+@media (max-width: 768px) {
+  .navbar{
+      padding: 0.5rem;
+  }
+  .nav-right{
+      display: none;
+  }
+  .toogler-icon-menu{
+      display: block;
+      align-self: center;
+  }
+  #sideMenu {
+      width: 20%;
+  }
+  .con-head{
+      font-size: 0.7rem;
+  }
+  .linkText{
+      display: none;
+  }
+  .nav-item{
+      text-align: center;
+      justify-content: center;
+  }
+  main {
+    flex-direction: column;
+    padding: 0.2rem;
+  }
+  #videoPreviewSection {
+    flex: 0.5;
+    overflow-y: scroll;
+  }
+  #suggestedSection {
+    flex: 0.5;
+    padding: 0.2rem;
+  }
+  
+  #videoContainer {
+    min-height: 50vw;
+  }
+  
+  #videoTitle {
+    margin: 1rem 0rem;
+    font-size: 0.8rem;
+  }
+  #videoStats1,
+  #videoStats2 {
+    text-align: center;
+    gap: 1rem;
+    font-size: 0.6rem;
+  }
+  #videoStats2 span>img{
+    width: 0.8rem;
+  }
+  #channelDetails {
+    display: flex;
+    padding: 1rem 0.1rem;
+  }
+  #channelThumbnailContainer {
+    flex: 0.2;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  #channelThumbnail {
+    width: 5rem;
+    border-radius: 50%;
+  }
+  #channelDetailsContainer {
+    flex: 0.8;
+  }
+  #channelIntro {
+    display: flex;
+    justify-content: space-between;
+  }
+  .Subscribe {
+    padding: 0rem 0.5rem;
+    font-size: 0.8rem;
+  }
+  #commentDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  .userThumbnail {
+    width: 3rem;
+    border-radius: 50%;
+  }
+  .addComment {
+    display: flex;
+    gap: 1rem;
+  }
+  .userImage {
+    flex: 0.1;
+  }
+  .InputComment {
+    flex: 0.9;
+  }
+  .InputComment p {
+    margin-bottom: 0.2rem;
+  }
+  .addCommentInput {
+    background-color: #000;
+    border: none;
+    outline: none;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+  }
+  #Comments {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .commentTime {
+    font-size: 0.7rem;
+    color: gray;
+  }
+  .commentStats {
+    display: flex;
+    gap: 01rem;
+    margin-top: 1.5rem;
+  }
+  .commentStats span > img {
+    width: 1.3rem;
+  }
+  
+  /* suggested video section */
+  #cardDetails {
+    justify-content: space-evenly;
+  }
+  
+  
+ }
+
+
+
+
+
+
+
+

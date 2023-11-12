@@ -3,53 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="video.css">
     <link rel="shortcut icon" href="./Assets/Youtube-Logo.png" type="image/x-icon">
     <title>Youtube Clone</title>
 </head>
-<body id="videoBody">
+<body>
   <!-- loader spinner -->
   <div class="custom-loader" id="custom-loader"></div>
     <!-- nav bar -->
     <header>
-        <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">
-                <img src="./Assets/hamburger.png" alt="">
-                <a href="index.html"><img src="./Assets/Youtube-Logo-with text.png" alt=""></a>
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <form class="d-flex ms-auto" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="Search">
-                    <button class="btn bg-secondary" type="submit" id="searchBtn"><img src="./Assets/search.png" alt=""></button>
-                    <img src="./Assets/listen.png" alt="" class="ms-2">
-                  </form>
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#"><img src="./Assets/Create.png" alt=""></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"><img src="./Assets/Apps.png" alt=""></a>
-                  </li>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"><img src="./Assets/Notifications.png" alt=""></a>
-                  </li>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"><img src="./Assets/Profile.png" alt=""></a>
-                  </li>
+      <nav class="navbar">
+          <div class="nav-left">
+              <img src="./Assets/hamburger.png" alt="" onclick="hide()" class="toogler-icon-menu">
+              <a class="" href="./index.html">
+              <img src="./Assets/Youtube-Logo-with text.png" alt="">
+            </a>
+          </div>
 
-                </ul>
-              </div>
-            </div>
-          </nav>
-    </header>
-    <main class="" id="videoMain">
+          <div class="nav-center">
+              <form class="nav-form" role="search">
+                  <input type="search" placeholder="Search" id="Search">
+                  <button  type="submit" id="searchBtn">
+                      <img src="./Assets/search.png" alt="searchBtn">
+                  </button>
+                  <img src="./Assets/listen.png" alt="listen">
+                </form>
+          </div>
+
+          <div class="nav-right">   
+              <ul class="navbar-list">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#">
+                      <img src="./Assets/Create.png" alt="">
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                      <img src="./Assets/Apps.png" alt="">
+                  </a>
+                </li>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                      <img src="./Assets/Notifications.png" alt="">
+                  </a>
+                </li>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                      <img src="./Assets/Profile.png" alt="">
+                  </a>
+                </li>
+
+              </ul>
+          </div>
+          <img src="./Assets/hamburger.png" alt="" class="toogler-icon-menu">
+          </div>
+      </nav>
+  </header>
+
+    <main>
 
         <!-- video & channel details -->
         <div id="videoPreviewSection">
@@ -74,7 +87,7 @@
               </span>
             </div>
 
-            <hr style="border: 2px solid grey;">
+            <hr style="border: 1px solid grey;">
 
             <div id="channelDetails">
               <div id="channelThumbnailContainer">
@@ -148,7 +161,6 @@
     <!-- this cdn is defining YT class -->
     <!-- this YT class needs a divID to render video player iframe-->
     <script src="https://www.youtube.com/iframe_api"></script>
-    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./video.js"></script>
 </body>
 </html>

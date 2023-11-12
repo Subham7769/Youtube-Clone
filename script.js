@@ -3,14 +3,14 @@ const API_KEY = "AIzaSyDA0UFC-gFpphL3RRiZy26LV_h4DMI_O1g";
 const BASE_URL = "https://www.googleapis.com/youtube/v3";
 let searchBtn = document.getElementById("searchBtn");
 let searchQuery = document.getElementById("Search");
-let videoContainer = document.getElementById("videoContainer");
+let videos = document.getElementById("videos");
 let customLoader = document.getElementById("custom-loader");
-let maxResults = 20;
+let maxResults = 15;
 
 async function initialRender() {
   console.log("Search Started");
   let dataItems = await fetchVideo(searchQuery.value, maxResults);
-  console.log(dataItems);
+  // console.log(dataItems);
   console.log("Rendering video...");
   customLoader.style.display = "none";
   renderVideo(dataItems);
@@ -19,7 +19,6 @@ async function initialRender() {
 searchBtn.addEventListener("click", async (e) => {
   e.preventDefault();
   console.log("Search Started");
-  customLoader.style.display = "block";
   let dataItems = await fetchVideo(searchQuery.value, maxResults);
   // console.log(dataItems);
   console.log("Rendering video...");
@@ -30,6 +29,8 @@ searchBtn.addEventListener("click", async (e) => {
 
 
 async function fetchVideo(searchQuery, maxResults) {
+  customLoader.style.display = "block";
+
   console.log("Fetching video");
   try {
     const response = await fetch(
@@ -54,7 +55,7 @@ async function fetchVideo(searchQuery, maxResults) {
         );
       }
     }
-    console.log(dataItems);
+    // console.log(dataItems);
     console.log("Fetching video Successful!");
     return dataItems;
   } catch (error) {
@@ -95,9 +96,9 @@ async function getChannelLogo(channelId) {
 
 function renderVideo(dataItems) {
   console.log("Rendering video starting...");
-  console.log(dataItems[0]);
+  // console.log(dataItems[0]);
 
-  videoContainer.innerHTML = "";
+  videos.innerHTML = "";
   for (let i = 0; i < dataItems.length; i++) {
     try {
       let videoId = dataItems[i].id.videoId;
@@ -112,9 +113,11 @@ function renderVideo(dataItems) {
         dataItems[i].contentDetails.items[0].contentDetails.duration;
 
       let cardDiv = document.createElement("div");
-      cardDiv.className = "card";
+      cardDiv.className = "card2";
       cardDiv.innerHTML = `
-        <img src="${videoThumbnailSrc}" al/t="videoThumbnail" class="card-img-top">
+        <div>
+          <img src="${videoThumbnailSrc}" al/t="videoThumbnail" class="card-img-top">
+        </div>
         <div class="cardBody" >
         <span class="" id="videoDuration">${durationConverter(
           duration
@@ -133,7 +136,7 @@ function renderVideo(dataItems) {
       cardDiv.addEventListener("click", () => {
         videoPreview(videoId);
       });
-      videoContainer.appendChild(cardDiv);
+      videos.appendChild(cardDiv);
     } catch (error) {
       console.log(error);
     }
@@ -226,3 +229,9 @@ function channelPreview(element) {
   window.location.href = "channel.html";
 }
 
+function showSideMenu(){
+  console.log("clicked");
+   let sideMenu = document.getElementById("sideMenu");
+   sideMenu.classList.toggle("show");
+  console.log(sideMenu);
+}
